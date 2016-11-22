@@ -17,8 +17,8 @@ if (isset($_GET["messi"]) && isset($_GET["ronaldo"]) && isset($_GET["mann"])) {
     $mann = $_GET["mann"];
 if (isset($_GET["error"])) {
     $error = $_GET["error"];
-    if ($error&8){
-        echo("<p class='error'>La suma de porcentajes supera el 100%</p>");
+    function errores($error){
+
         if ($error&1){
             echo("<p class='error'>El rango de Messi tiene que ir de 0 a 100</p>");
         }
@@ -28,19 +28,18 @@ if (isset($_GET["error"])) {
         if ($error&4){
             echo("<p class='error'>El rango de Griezmann tiene que ir de 0 a 100</p>");
         }
+    };
+    if ($error&8){
+        echo("<p class='error'>La suma de porcentajes supera el 100%</p>");
+         errores($error);
     }
     if ($error&16){
         echo("<p class='error'>La suma de porcentajes es menor a 100%</p>");
-        if ($error&1){
-            echo("<p class='error'>El rango de Messi tiene que ir de 0 a 100</p>");
-        }
-        if ($error&2){
-            echo("<p class='error'>El rango de Ronaldo tiene que ir de 0 a 100</p>");
-        }
-        if ($error&4){
-            echo("<p class='error'>El rango de Griezmann tiene que ir de 0 a 100</p>");
-        }
+        errores($error);
     }
+}
+function jugador(){
+
 }
 }
 /*
@@ -146,7 +145,7 @@ if
                         echo ("'");
                     }
                     if (isset($error)){
-                        if ($error&2){
+                        if ($error&4){
                             echo("style=\"background-color: red\"");
                         }
                     }
@@ -163,7 +162,7 @@ if
                         echo ("'");
                     }
                     if (isset($error)){
-                        if ($error&4){
+                        if ($error&2){
                             echo("style=\"background-color: red\"");
                         }
                     }

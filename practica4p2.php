@@ -18,6 +18,17 @@
         $ronaldo=$_POST["ronaldo"];
         $mann=$_POST["mann"];
         $error=0;
+        function errores($messi,$error,$mann,$ronaldo){
+            if ($messi<0 || $messi>100){
+                $error=$error+1;
+            }
+            if ($mann<0 || $mann>100){
+                $error=$error+2;
+            }
+            if ($ronaldo<0 || $ronaldo>100){
+                $error=$error+4;
+            }
+        }
         if (($messi+$ronaldo+$mann)==100){
             if ($messi>1 && $ronaldo>1 && $mann>1){
                 echo ("<tr id='messi1'><td>Messi</td>");
@@ -40,27 +51,11 @@
                 echo("</td></tr>");
             }
         }elseif (($messi+$ronaldo+$mann)>100){
-            if ($messi<0 || $messi>100){
-                $error=$error+1;
-            }
-            if ($mann<0 || $mann>100){
-                $error=$error+2;
-            }
-            if ($ronaldo<0 || $ronaldo>100){
-                $error=$error+4;
-            }
+            errores($messi,$error,$mann,$ronaldo);
             $error=$error+8;
             header("Location: practica4form.php?error=$error&messi=$messi&ronaldo=$ronaldo&mann=$mann");
         }elseif (($messi+$ronaldo+$mann)<100) {
-            if ($messi < 0 || $messi > 100) {
-                $error=$error+1;
-            }
-            if ($mann < 0 || $mann > 100) {
-                $error=$error+2;
-            }
-            if ($ronaldo < 0 || $ronaldo > 100) {
-                $error=$error+4;
-            }
+            errores($messi,$error,$mann,$ronaldo);
             $error=$error+16;
             header("Location: practica4form.php?error=$error&messi=$messi&ronaldo=$ronaldo&mann=$mann");
         }
