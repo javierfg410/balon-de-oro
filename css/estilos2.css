@@ -1,0 +1,63 @@
+body{
+    background-image: url("../img/oro.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#parte1{
+    position: fixed;
+    width: 700px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: -350px;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 15px;
+}
+#titulo{
+    background-color: #737373;
+    height: 50px;
+    margin-top: -21px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+}
+
+table{
+    position: absolute;
+    top: 50px;
+
+    width: 400px;
+    height: 175px;
+
+}
+.numero{
+    width: 100px;
+}
+
+a{
+    position: absolute;
+    top: 225px;
+    left: 150px;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #dddddd;
+    border-right: 15px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    padding-top: 25px;
+}
+.formu{
+    width: 50px;
+}
+#ronaldo1{
+   color: #e6ddcd;
+}
+#messi1{
+    color: #a8c3d1;
+}
+#mann1{
+    color: #de9a92;
+}

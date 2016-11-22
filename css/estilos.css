@@ -1,0 +1,74 @@
+body{
+    background-image: url("../img/oro.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;margin: 0;
+}
+#parte1{
+    position: fixed;
+    width: 700px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: -350px;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 15px;
+}
+#titulo{
+    background-color: #737373;
+    height: 50px;
+    margin-top: -21px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+}
+h1{
+    color: white;
+}
+table{
+    position: absolute;
+    top: 75px;
+    left: 150px;
+    width: 400px;
+    height: 175px;
+
+}
+.numero{
+    width: 100px;
+}
+label{
+    margin: 0;
+    padding-left: 75px;
+    color: white;
+}
+td{color: white;}
+input[type="number"]{
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: right;
+}
+button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.formu{
+    width: 50px;
+}
+.error{
+    height: 100%;
+    background-color: red;
+    margin: 0;
+    text-align: center;
+}
+.error{
+    color: white;
+    padding: 10px;
+}
+input[type="number"]:focus{
+    background-color: white;
+    color: black;
+}
