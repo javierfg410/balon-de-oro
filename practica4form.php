@@ -11,12 +11,16 @@
 <body>
 
 <?php
+// Condicion para registrar los  valores de messi ronaldo y mann
 if (isset($_GET["messi"]) && isset($_GET["ronaldo"]) && isset($_GET["mann"])) {
     $messi = $_GET["messi"];
     $ronaldo = $_GET["ronaldo"];
     $mann = $_GET["mann"];
+// Una ves registrado los valores, resgistrar la condicion error
 if (isset($_GET["error"])) {
     $error = $_GET["error"];
+// Crear una funcion para que, dependiendo del numero de error,
+// te ponga el mensaje dependiendo del codigo de error
     function errores($error){
 
         if ($error&1){
@@ -29,17 +33,18 @@ if (isset($_GET["error"])) {
             echo("<p class='error'>El rango de Griezmann tiene que ir de 0 a 100</p>");
         }
     };
+//en el caso de que la variable error tenga el bit 8,
+// salga el mensaje de error y llame a la funcion de los errores de cada jugador
     if ($error&8){
         echo("<p class='error'>La suma de porcentajes supera el 100%</p>");
          errores($error);
     }
+//en el caso de que la variable error tenga el bit 8,
+// salga el mensaje de error y llame a la funcion de los errores de cada jugador
     if ($error&16){
         echo("<p class='error'>La suma de porcentajes es menor a 100%</p>");
         errores($error);
     }
-}
-function jugador(){
-
 }
 }
 /*
@@ -122,6 +127,8 @@ if
             <tr>
                 <td><label for="messi">Messi</label></td>
                 <td class="number"><input type="number" id="messi" name="messi" <?php
+                    //creamos una instruccion php, para que, en el caso de tener los valores "error" y "messi"
+                    //escriba el valor del jugador, y en el caso de tener un error se ponga el fondo rojo
                     if (isset($_GET["messi"])){
                         echo ("value='");
                         echo $messi;
@@ -139,6 +146,8 @@ if
             <tr>
                 <td><label for="ronaldo">Cristiano ronaldo</label></td>
                 <td class="numero"><input type="number" id="ronaldo" name="ronaldo" <?php
+                    //creamos una instruccion php, para que, en el caso de tener los valores "error" y "rodrigo"
+                    //escriba el valor del jugador, y en el caso de tener un error se ponga el fondo rojo
                     if (isset($_GET["ronaldo"])){
                         echo ("value='");
                         echo $ronaldo;
@@ -156,6 +165,8 @@ if
             <tr>
                 <td><label for="mann">Griezmann</label></td>
                 <td class="numero"><input type="number" id="mann" name="mann" <?php
+                    //creamos una instruccion php, para que, en el caso de tener los valores "error" y "mann"
+                    //escriba el valor del jugador, y en el caso de tener un error se ponga el fondo rojo
                     if (isset($_GET["mann"])){
                         echo ("value='");
                         echo $mann;
